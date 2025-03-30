@@ -1,0 +1,11 @@
+pygad
+pandas
+numpy
+matplotlib
+logging
+pydantic
+Jinja2
+tqdm
+joblib
+seaborn
+multiprocess
