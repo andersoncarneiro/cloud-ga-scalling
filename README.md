@@ -6,21 +6,44 @@ This project simulates cloud service auto scaling with different traffic pattern
 
 ## Setup Instructions
 
-1. **Install dependencies:**
+1. **Create and activate a virtual environment:**
+   ```bash
+   # Create a virtual environment named .venv
+   python -m venv .venv
+
+   # Activate the virtual environment
+   # On Windows:
+   .venv\Scripts\activate
+   
+   # On macOS/Linux:
+   source .venv/bin/activate
    ```
+
+2. **Install dependencies:**
+   ```bash
+   # Make sure your virtual environment is activated (.venv should appear in your terminal)
    pip install -r requirements.txt
    ```
 
-2. **Run the notebook:**
-   - Launch Jupyter:
+3. **Set up Jupyter with the virtual environment:**
+   ```bash
+   # Install ipykernel to register the virtual environment with Jupyter
+   pip install ipykernel
+   
+   # Register the virtual environment as a Jupyter kernel
+   python -m ipykernel install --user --name=.venv --display-name="GA Cloud Simulation (venv)"
    ```
+
+4. **Run Jupyter:**
+   ```bash
    jupyter notebook
    ```
-   - Open `simulation.ipynb` in Jupyter 
+   - Open `simulation.ipynb` in Jupyter
+   - Select Kernel → Change kernel → "Cloud Simulation (venv)"
    - Run cells sequentially to see simulation results
 
-3. **Run tests:**
-   ```
+5. **Run tests:**
+   ```bash
    python -m unittest test_cloud_simulation.py
    ```
 
